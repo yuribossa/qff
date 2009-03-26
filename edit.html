@@ -1,0 +1,45 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+  <head>
+    <title>Test</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript" src="../jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="edit.css" />
+    <script type="text/javascript">
+      $(document).ready(function() {
+          $("#addTextBox").click(function() {
+            $("<div/>").css({"position": "relative", "top": "20px", "left": "30px", "width": "200px", "height": "50px", "background-color": "lime"}).appendTo("#editWindow");
+            });
+          });
+    </script>
+  </head>
+  <body>
+    <div id="editWindow"></div>
+    <form>
+      <input type="button" id="prevSlide" value="<">
+      <input type="button" id="nextSlide" value=">">
+    </form>
+    <div id="sideBar">
+      <form>
+        <input type="button" id="addSlide" value="Add Slide">
+        <br>
+        <input type="button" id="deleteSlide" value="Delete Slide">
+        <br>
+        <input type="button" id="addTextBox" value="Add TextBox">
+        <br>
+        <input type="button" id="deleteTextBox" value="Delete TextBox">
+        <br>
+        <textarea rows=4 cols=30></textarea>
+        <br>
+        <input type="radio" name="yose" checked>左寄せ
+        <input type="radio" name="yose">中央
+        <input type="radio" name="yose">右寄せ
+        <br>
+        <input type="button" id="Commit" value="Commit">
+      </form>
+    </div>
+  </body>
+</html>
+

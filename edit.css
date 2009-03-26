@@ -1,0 +1,33 @@
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.4;
+  color: #333;
+  font-family: Arial, sans-serif;
+  font-size: 0.9em;
+}
+
+#editWindow {
+  width: 640px;
+  height: 480px;
+  border: solid 1px #000000;
+}
+
+#nextSlide {
+  width: 80px;
+}
+
+#prevSlide {
+  width: 80px;
+}
+
+#sideBar {
+  position: absolute;
+  top: 10px;
+  left: 650px;
+}
+
