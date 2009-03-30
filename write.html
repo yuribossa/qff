@@ -1,0 +1,37 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+  <head>
+    <title>PPT Test</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="ppt.css" />
+    <script type="text/javascript" src="../jquery.js"></script>
+    <script type="text/javascript">
+      $(function() {
+          $("#div2 > h1").css({"color": "#00ff00", "border": "dotted 5px #00ffff"});
+          var html = jQuery.map($("div.page").get(), function(d) { return d.innerHTML; });
+          alert(html.join(", "));
+          var style = jQuery.map($("div.page > *").get(), function(d) { return d.style; });
+          alert(style.join(", "));
+      });
+    </script>
+  </head>
+  <body>
+    <div id="div1" class="page">
+      <h1>This is H1</h1>
+      <h2 align="center">This is H2</h2>
+      <p>This is P</p>
+    </div>
+    <div id="div2" class="page">
+      <h1>Changed!</h1>
+      <div style="color: #0000ff">DIV DIV DIV</div>
+    </div>
+    <div id="div3" class="page">
+      <h1>Changed 2!</h1>
+      <div class="bigFont">でっかい川*＾∇＾)||</div>
+      <div class="center">でっかい川*＾∇＾)||</div>
+    </div>
+  </body>
+</html>
+
