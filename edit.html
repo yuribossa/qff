@@ -5,10 +5,8 @@
   <head>
     <title>QFF</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="text/javascript" src="../jquery.js"></script>
-    <script type="text/javascript" src="../ui/ui.core.js"></script>
-    <script type="text/javascript" src="../ui/ui.draggable.js"></script>
-    <script type="text/javascript" src="../ui/ui.resizable.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/jquery-ui.min.js"></script>
     <script type="text/javascript" src="../farbtastic/farbtastic.js"></script>
     <script type="text/javascript" src="edit.js"></script>
     <link rel="stylesheet" type="text/css" href="../themes/base/ui.all.css" />
@@ -34,9 +32,9 @@
         <br>
         <textarea id="inputTextBox" rows=4 cols=30></textarea>
         <br>
-        <input type="radio" name="yose" checked>左寄せ
-        <input type="radio" name="yose">中央
-        <input type="radio" name="yose">右寄せ
+        <input type="radio" name="yose" class="textAlignRadio" value="left" checked>左寄せ
+        <input type="radio" name="yose" class="textAlignRadio" value="center">中央
+        <input type="radio" name="yose" class="textAlignRadio" value="right">右寄せ
         <br>
         <input type="text" id="color" value="#123456">
         <div id="colorpicker"></div>

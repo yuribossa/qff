@@ -23,15 +23,33 @@ function addTextBox() {
   .appendTo(".slide:visible");
 }
 
+function deleteTextBox() {
+  $(".focusElement").remove();
+}
+
 function addSlide() {
-  var newSlide = $("<div/>").addClass("slide")
-                            .addClass("edit");
+  var newSlide = $("<div/>").addClass("slide");
   if ($("div.slide:visible").length > 0) {
     $("div.slide:visible").hide()
                           .after(newSlide);
     resetFocusElement();
   } else {
     newSlide.appendTo("#editWindow");
+  }
+}
+
+function deleteSlide() {
+  if ($("div.slide").length >= 2) {
+    var sd;
+    if ($("div.slide:visible").get(0) == $("div.slide:last").get(0)) {
+      sd = $("div.slide:visible").prev();
+    } else {
+      sd = $("div.slide:visible").next();
+    }
+    $("div.slide:visible").remove();
+    sd.show();
+  } else {
+    alert("スライドが1枚だけなのでこれ以上削除できません");
   }
 }
 
@@ -61,13 +79,14 @@ $(document).ready(function() {
   // スライド挿入
   $("#addSlide").click(addSlide);
 
+  // スライド削除
+  $("#deleteSlide").click(deleteSlide);
+
   // テキストボックス挿入
   $("#addTextBox").click(addTextBox);
 
   // テキストボックス削除
-  $("#deleteTextBox").click(function() {
-    $(".focusElement").remove();
-  });
+  $("#deleteTextBox").click(deleteTextBox);
 
   // 次のスライド
   $("#nextSlide").click(nextSlide);
@@ -79,7 +98,9 @@ $(document).ready(function() {
   $("#commitOk").click(function() {
     var focusElement = getFocusElement();
     if (focusElement.hasClass("textBox")) {
-      focusElement.css({"background-color": $("#color").val()})
+      focusElement.css({
+        "background-color": $("#color").val()
+      , "text-align": $(".textAlignRadio:checked").val()})
       .text($("#inputTextBox").val());
     }
   });
